@@ -2,7 +2,7 @@
 
 const promptSync = require('prompt-sync')();
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 
 // for (let i = 1; i <= 3; i++) {
 //   console.log(`\nArquivo ${i}:`);
@@ -41,7 +41,24 @@ const path = require('path')
 // fs.appendFileSync(nomeArquivo, novoConteudo, "utf-8") //Isso adiciona o novo conteúdo ao arquivo
 
 
-const origem = path.join(__dirname, "teste1.txt")
-const destino = path.join("C:/Users/DES-I1HS/Downloads", "teste1.txt")
+// const origem = path.join(__dirname, "teste1.txt") //Isso define a origem do arquivo
+// const destino = path.join("C:/Users/DES-I1HS/Downloads", "copia_teste1.txt") //Isso define o destino do arquivo
 
-fs.cpSync(origem, destino, {recursive:true})
+// fs.cpSync(origem, destino, {recursive:true}) //Isso copia o arquivo pro destino
+
+// const origem = path.join(__dirname, "teste1.txt") // // Isso define a origem do arquivo
+// const destino = path.join(`${__dirname}/Meus Arquivos/Arquivos Diversos`, "teste1.txt") // //Isso define o destino do arquivo
+
+// fs.renameSync(origem, destino, {recursive:true}) // // Isso move o arquivo pro destino
+
+// const origem = path.join(__dirname, "Meus Arquivos");
+// const destino = path.join(`C:/Users/DES-I1HS/Documents/Meus Arquivos`)
+// fs.renameSync(origem, destino)
+
+const destino = path.join("C:/Users/DES-I1HS/Documentos/Meus Arquivos")
+
+if (fs.existsSync(destino)) {
+    fs.rmSync(destino, {recursive:true});
+} else {
+    console.log("Diretório não localizado")
+}
