@@ -33,3 +33,15 @@ const path = require('path')
 
 // fs.mkdirSync (estruturaDePastas, {recursive:true});
 
+// let nomeArquivo = "fiap.txt" //Variável do nome do arquivo
+// let conteudo = "Miguel, Jasiel, Tiago, João Maziero" //Conteúdo do arquivo
+// fs.writeFileSync(nomeArquivo, conteudo, "utf-8") //Isso cria um arquivo com o nome do nomeArquivo, com o conteúdo do conteudo
+
+// let novoConteudo = "/nLara, Livia, Isabela, Raissa" //Isso é a váriavel do novo conteúdo
+// fs.appendFileSync(nomeArquivo, novoConteudo, "utf-8") //Isso adiciona o novo conteúdo ao arquivo
+
+
+const origem = path.join(__dirname, "teste1.txt")
+const destino = path.join("C:/Users/DES-I1HS/Downloads", "teste1.txt")
+
+fs.cpSync(origem, destino, {recursive:true})
