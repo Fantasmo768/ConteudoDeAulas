@@ -1,8 +1,8 @@
-// console.log("Seja bem-vindo ao criador de arquivos");
+//  console.log("Seja bem-vindo ao criador de arquivos");
 
-const promptSync = require('prompt-sync')();
-const fs = require('fs');
-const path = require('path');
+// const promptSync = require('prompt-sync')();
+// const fs = require('fs');
+// const path = require('path');
 
 // for (let i = 1; i <= 3; i++) {
 //   console.log(`\nArquivo ${i}:`);
@@ -22,7 +22,7 @@ const path = require('path');
 // console.log("\nTodos os arquivos foram criados.")
 
 
-//console.log(__dirname);
+// console.log(__dirname);
 
 // //C:\User\DES-I1HS\Desktop\R9\Meus Aquivos
 // const pasta = path.join(__dirname, "Meus Arquivos"); //esse comando cria a pasta Meus Arquivos

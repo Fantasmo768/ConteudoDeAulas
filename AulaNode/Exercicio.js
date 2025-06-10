@@ -4,19 +4,28 @@ const path = require('path')
 
 let nomeArquivo = "Informações.txt"
 let nomes = []; let alturas = []; let pesos = []
+let quantidadeInfo = 0;
 
-while (isNaN(quantidadeInfo) || quantidadeInfo <= 0) {
-    quantidadeInfo = parseInt(promptSync("Insira um valor válido"))
+while (true) {
+    
+    let nome = promptSync(`Insira o nome da ${quantidadeInfo+1}° pessoa `)
+    if (nome.toLowerCase() == "parar") {
+        break
+    }
+    let peso = promptSync(`Insira o peso da ${quantidadeInfo+1}° pessoa `)
+    let altura = promptSync(`Insira a altura da ${quantidadeInfo+1}° pessoa `)
+
+    
+    nomes[quantidadeInfo] = nome
+    pesos[quantidadeInfo] = peso
+    alturas[quantidadeInfo] = altura
+    quantidadeInfo++
+
+    
 }
 
 for (let i = 0; i < quantidadeInfo; i++) {
-    nomes [i] = promptSync(`Insira o nome da ${i}° pessoa`)
-    pesos [i] = promptSync(`Insira o peso da ${i}° pessoa`)
-    alturas [i] = promptSync(`Insira a altura da ${i}° pessoa`)
-}
-
-for (let i = 0; i < quantidadeInfo; i++) {
-    fs.appendFileSync(nomeArquivo, `${nomes[i]}`, "utf-8")
-    fs.appendFileSync(nomeArquivo, `${pesos[i]}`, "utf-8")
-    fs.appendFileSync(nomeArquivo, `${alturas[i]}`, "utf-8")
+    fs.appendFileSync(nomeArquivo, `${nomes[i]} `, "utf-8")
+    fs.appendFileSync(nomeArquivo, `${pesos[i]} `, "utf-8")
+    fs.appendFileSync(nomeArquivo, `${alturas[i]}\n`, "utf-8")
 }
